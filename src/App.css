@@ -28,9 +28,8 @@
   color: #61dafb;
 }
 .icono {
-  color: black;
+  color: white;
   font-size: 30px;
-  margin-right: 50px;
 }
 @keyframes App-logo-spin {
   from {
