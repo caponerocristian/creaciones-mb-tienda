@@ -1,26 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useEffect} from 'react';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 
+
 function App() {
+  useEffect(() => {
+    console.log('Se monto el componente');
+      return () =>{
+        console.log('Desmonto el componente');
+      }
+  }, []);
   return (
     <div className="App">
       <NavBar/>
-      <ItemListContainer titulo={'Creaciones MB'}/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-
-        </a>
+        <ItemListContainer titulo={'Creaciones MB'}/>
       </header>
     </div>
   );
