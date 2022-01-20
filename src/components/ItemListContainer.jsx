@@ -1,31 +1,46 @@
-import React, {useEffect} from 'react';
-import ItemCount from './ItemCount'
-import {Card} from "react-bootstrap";
-import spiderMan from './img/tienda4.jpeg';
+import React, {useEffect,useState} from 'react';
+import ItemList from './ItemList';
+import ItemCount from './ItemCount';
 
 export default function ItemListContainer ({titulo}){
+
+    let ListaProductos = [
+        {
+            "precio": 500,
+            "id": 1,
+            "title": "Café",
+            "descripcion": "Descripcion Cafe",
+            "stock": 100,
+            "thumbnailUrl": "https://picsum.photos/id/0/600"
+        },
+        {
+            "precio": 300,
+            "id": 2,
+            "title": "Pizza",
+            "descripcion": "Descripcion Pizza",
+            "stock": 50,
+            "thumbnailUrl": "https://picsum.photos/id/10/600"
+        },
+    ];
+
+    const [itemList, setItemList] = useState([]);
+
+    const cargarProductos = new Promise((resolve, reject)  => {
+        setTimeout(()=>{
+            resolve(ListaProductos);
+        }, 2000);
+    });
+
     useEffect(() => {
-        console.log('Se monto el componente');
-            return () =>{
-                console.log('Desmonto el componente');
-            }
+        cargarProductos.then((res) =>{
+            setItemList(res);
+        });
     }, []);
+
     return(
         <>
             <div style={{color: 'salmon', fontSize: '50px', fontWeight: '900'}}>{titulo}</div>
-            <div className="justify-content-center">
-                <Card className="text-center" style={{ width: '35%' }}>
-                    <Card.Img variant="top" src={spiderMan}/>
-                    <Card.Body>
-                        <Card.Title>Spider-Man</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
-                        </Card.Text>
-                        <ItemCount initial={1} stock={10}/>
-                    </Card.Body>
-                </Card>
-            </div>
+            <ItemList itemList={itemList}/>
         </>
     );
 }
