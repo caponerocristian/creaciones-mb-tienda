@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, Card} from 'react-bootstrap';
 
-function Item({props}) {
+function Item(props) {
     
     return(
         <>
