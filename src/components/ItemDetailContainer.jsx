@@ -1,7 +1,9 @@
 import React, {useEffect,useState} from 'react';
-import ItemList from './ItemList';
+import { BrowserRouter, Switch, Route, useParams, Link } from 'react-router-dom';
+import ItemDetail from './ItemDetail';
 
-export default function ItemListContainer (props){
+export default function ItemDetailContainer () {
+    const { itemId} = useParams();
 
     let ListaProductos = [
         {
@@ -41,25 +43,22 @@ export default function ItemListContainer (props){
             "image": "https://picsum.photos/id/30/600"
         },
     ];
+    const cargarProductos = async () =>{
+        setTimeout(() => {
+            ListaProductos = ListaProductos.filter(item => item.id == itemId);
+            let myProducto = ListaProductos[0];
+            setProducto(myProducto);
+        },2000)
+    }
+    const [producto, setProducto] = useState({});
 
-    const [itemList, setItemList] = useState([]);
-
-    const cargarProductos = new Promise((resolve, reject)  => {
-        setTimeout(()=>{
-            resolve(ListaProductos);
-        }, 2000);
-    });
-
-    useEffect(() => {
-        cargarProductos.then((res) =>{
-            setItemList(res);
-        });
-    }, []);
+    useEffect(()=>{
+        cargarProductos();
+    },[itemId]) 
 
     return(
         <>
-            <h1 style={{color: 'salmon', fontSize: '50px', fontWeight: '900'}}>{props.greeting}</h1>
-            <ItemList itemList={itemList}/>
+            <ItemDetail producto={producto}/>
         </>
     );
-}
+};
