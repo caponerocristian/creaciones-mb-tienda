@@ -60,7 +60,7 @@ export default function ItemDetail ({producto}){
             </Col>
             </Row>
         </Container> */}
-        <Card style={{ width: '18rem', marginTop: '10px' }}>
+        <Card style={{ width: '20rem', marginTop: '10px', marginBottom: '10px' }}>
             <Card.Img variant="top" src={producto.image} />
             <Card.Body>
             <Card.Title>{producto.title}</Card.Title>

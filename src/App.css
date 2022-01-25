@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #f9fafc;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -40,28 +40,20 @@
     transform: rotate(360deg);
   }
 }
-.item-card {
-  width: 230px;
-  height: auto;
-  margin: 10px;
-  padding: 0;
-  border: 1px solid #444;
-  border-radius: 6px;
+.padding{
+  padding: 10px;
+}
+.card {
+
+  height: auto !important;
+  width: '10rem' !important;
+  color : black;
   overflow: hidden;
+  box-shadow: 0 2px 20px gray;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-}
-.item-header {
-  background-color: #ddd;
-  font-size: 1.2rem;
-  padding: 5px;
-}
-Button {
-  margin-top: auto;
-  margin-left: 4px;
-  margin-right: 4px;
-}
-.item-price {
-  text-align: center;
-  margin-left: 5px;
+  justify-content: space-evenly;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
 }

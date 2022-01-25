@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav} from "react-bootstrap";
 import CartWidget from "./CartWidget";
+import { NavLink } from 'react-router-dom';
 
 
 export default function NavBar (){
@@ -12,8 +13,8 @@ export default function NavBar (){
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#Etiquetas">Etiquetas</Nav.Link>
-                        <Nav.Link href="#Cajas">Cajas</Nav.Link>
+                        <NavLink to={"/categoria/Etiquetas"}>Etiquetas</NavLink>
+                        <NavLink to={"/categoria/Caja"}>Cajas</NavLink>
                     </Nav>
                     <Nav>
                         <CartWidget/>
