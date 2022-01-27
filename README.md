@@ -1,3 +1,23 @@
+# Proyecto Final Coder House 
+
+La App final se trata de un Ecommerce
+
+# Nombre del Proyecto
+
+Creaciones MB
+
+# Descripción
+
+Es una tienda de Kit Escolares (Etiquetas para nombrar los utiles!), Kit de Cumpleños, etc
+
+# Tecnologias 
+
+HTML - JavaScript - CSS
+
+# URL del repositorio
+
+https://github.com/caponerocristian/creaciones-mb-tienda
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
