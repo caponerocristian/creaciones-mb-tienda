@@ -8,46 +8,49 @@ function Categoria() {
 
     let ListaProductos = [
         {
-            "price": 500,
+            "price": 50,
             "id": 1,
-            "title": "Café",
-            "description": "Descripción Cafe",
+            "title": "Mikey",
+            "description": "Caja Pochoclera",
             "category": "Caja",
             "stock": 100,
-            "image": "https://picsum.photos/id/0/600"
+            "image": "/img/carrusel1.jpeg"
         },
         {
-            "price": 300,
+            "price": 80,
             "id": 2,
-            "title": "Pizza",
-            "description": "Descripción Pizza",
+            "title": "Simones",
+            "description": "Etiquetas para lapices x 20",
             "category": "Etiquetas",
             "stock": 50,
-            "image": "https://picsum.photos/id/10/600"
+            "image": "/img/galeria3.jpeg"
         },
         {
-            "price": 99,
+            "price": 100,
             "id": 3,
-            "title": "Agua",
-            "description": "Descripción Agua",
+            "title": "Unicornio",
+            "description": "Caja Golosinera",
             "category": "Caja",
             "stock": 200,
-            "image": "https://picsum.photos/id/20/600"
+            "image": "/img/galeria5.jpeg"
         },
         {
-            "price": 45,
+            "price": 70,
             "id": 4,
-            "title": "Sandía",
-            "description": "Descripción Pizza",
+            "title": "Mikey",
+            "description": "Envoltorio para chocolates x 30",
             "category": "Etiquetas",
             "stock": 100,
-            "image": "https://picsum.photos/id/30/600"
+            "image": "/img/galeria7.jpeg"
         },
     ];
     const [producto, setProducto] = useState({});
 
     useEffect(()=>{
-        setProducto(ListaProductos.filter(item => item.category == categoriaId));
+        setTimeout(()=>{
+            setProducto(ListaProductos.filter(item => item.category == categoriaId));
+        },2000);
+        
     },[categoriaId]) 
 
     return (

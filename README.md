@@ -8,7 +8,7 @@ Creaciones MB
 
 # Descripción
 
-Es una tienda de Kit Escolares (Etiquetas para nombrar los utiles!), Kit de Cumpleños, etc
+Es una tienda de Kit de Escolares (Etiquetas para nombrar los utiles!), Kit de Cumpleños, etc
 
 # Tecnologias 
 
