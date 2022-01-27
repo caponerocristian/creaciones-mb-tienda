@@ -1,5 +1,6 @@
 import React from 'react';
 import Item from './Item';
+import { Spinner } from "react-bootstrap";
 
 
 function ItemList(props) {
@@ -13,7 +14,9 @@ function ItemList(props) {
             })}
         </div>
         ) : (
-            <div>Cargando...</div>
+            <div>
+                <Spinner animation="border" variant="danger" /> Cargando...
+            </div>
         )}
         </>
     );

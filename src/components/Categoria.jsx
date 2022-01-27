@@ -1,6 +1,7 @@
 import React, {useEffect,useState} from 'react';
 import { useParams} from 'react-router-dom';
 import Item from './Item';
+import {Spinner} from "react-bootstrap";
 
 function Categoria() {
     const {categoriaId} = useParams();
@@ -51,14 +52,15 @@ function Categoria() {
 
     return (
         <>
+        <h2 className='itemDetail-titulo '>Categorias</h2>
         {producto.length > 0 ? (
         <div className="d-flex">
             {producto.map((item) => {
-                return <Item item={item} />;
+                return <Item key={item.id} item={item} />;
             })}
         </div>
         ) : (
-            <div>Cargando...</div>
+            <div><Spinner animation="border" variant="danger" />Cargando...</div>
         )}
         </>
     );

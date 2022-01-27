@@ -58,7 +58,7 @@ export default function ItemListContainer (props){
 
     return(
         <>
-            <h1 style={{color: 'salmon', fontSize: '50px', fontWeight: '900'}}>{props.greeting}</h1>
+            <h1 className='titulo-h1'>{props.greeting}</h1>
             <ItemList itemList={itemList}/>
         </>
     );
