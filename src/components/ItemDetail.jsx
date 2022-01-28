@@ -1,8 +1,20 @@
-import React from 'react';
-import {Card, Spinner} from "react-bootstrap";
+import React, { useState } from 'react';
+import {Card, Spinner, Button} from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 
+
 export default function ItemDetail ({producto}){
+    const [itemCount, setItemCount] = useState(true);
+    const [cantidad, setCantidad] = useState(null);
+
+    function onAdd(cantidad){
+        if(cantidad >=1){
+            setCantidad(cantidad);
+            setItemCount(false);
+
+        }
+    }
     return(
         <>
         {(producto.id > 0) ?
@@ -16,7 +28,14 @@ export default function ItemDetail ({producto}){
                 <Card.Text>{producto.category}</Card.Text>
                 <Card.Text>Stock: {producto.stock}</Card.Text>
                 <Card.Text>${producto.price}</Card.Text>
-                <ItemCount stock={producto.stock} initial={1}/>
+                {
+                    (itemCount) ?
+                    <ItemCount stock={producto.stock} initial={1} onAdd={onAdd}/>
+                    :
+                    <Link to={"/cart"}><Button variant="danger" className='onda'>Ver {cantidad} productos en el carrito</Button></Link>
+                    
+                }
+                
             </Card.Body>
 </Card>
         </>

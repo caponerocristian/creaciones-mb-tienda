@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Categoria from './components/Categoria';
+import Cart from './components/Cart';
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path={"/categoria/:categoriaId"}>
             <Categoria/>
+          </Route>
+          <Route path={"/cart"}>
+            <Cart/>
           </Route>
         </Switch>
         </header>
