@@ -7,6 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Categoria from './components/Categoria';
 import Cart from './components/Cart';
 import CartProvider from './contex/CartProvider';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           </Route>
         </Switch>
         </header>
+        <Footer/>
       </BrowserRouter>
       </CartProvider>
       </div>
