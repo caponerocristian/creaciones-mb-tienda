@@ -6,6 +6,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Categoria from './components/Categoria';
 import Cart from './components/Cart';
+import CartProvider from './contex/CartProvider';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
     // </div>
     <>
     <div className="App">
+      <CartProvider>
       <BrowserRouter>
         <NavBar/>
         <header className="App-header">
@@ -37,6 +39,7 @@ function App() {
         </Switch>
         </header>
       </BrowserRouter>
+      </CartProvider>
       </div>
     </>
   );

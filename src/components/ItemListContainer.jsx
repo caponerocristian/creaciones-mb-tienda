@@ -5,41 +5,77 @@ export default function ItemListContainer (props){
 
     let ListaProductos = [
         {
-            "price": 50,
+            "price": 100,
             "id": 1,
-            "title": "Mikey",
+            "title": "Cariñosos",
             "description": "Caja Pochoclera",
             "category": "Caja",
             "stock": 100,
-            "image": "/img/carrusel1.jpeg"
+            "image": "/img/tienda1.jpeg"
         },
         {
-            "price": 80,
+            "price": 200,
             "id": 2,
-            "title": "Simones",
+            "title": "Stick",
             "description": "Etiquetas para lapices x 20",
             "category": "Etiquetas",
             "stock": 50,
-            "image": "/img/galeria3.jpeg"
+            "image": "/img/tienda2.jpeg"
         },
         {
             "price": 100,
             "id": 3,
-            "title": "Unicornio",
+            "title": "Mikey",
             "description": "Caja Golosinera",
             "category": "Caja",
             "stock": 200,
-            "image": "/img/galeria5.jpeg"
+            "image": "/img/tienda3.jpeg"
         },
         {
-            "price": 70,
+            "price": 200,
             "id": 4,
-            "title": "Mikey",
+            "title": "Spider-Man",
             "description": "Envoltorio para chocolates x 30",
             "category": "Etiquetas",
-            "stock": 100,
-            "image": "/img/galeria7.jpeg"
+            "stock": 20,
+            "image": "/img/tienda4.jpeg"
         },
+        {
+            "price": 100,
+            "id": 5,
+            "title": "Unicornio",
+            "description": "Caja Pochoclera",
+            "category": "Caja",
+            "stock": 40,
+            "image": "/img/tienda5.jpeg"
+        },
+        {
+            "price": 200,
+            "id": 6,
+            "title": "Pandas",
+            "description": "Etiquetas para lapices x 20",
+            "category": "Etiquetas",
+            "stock": 150,
+            "image": "/img/tienda6.jpeg"
+        },
+        {
+            "price": 100,
+            "id": 7,
+            "title": "Conejo",
+            "description": "Caja Pochoclera",
+            "category": "Caja",
+            "stock": 300,
+            "image": "/img/tienda7.jpeg"
+        },
+        {
+            "price": 200,
+            "id": 8,
+            "title": "Car",
+            "description": "Etiquetas para lapices x 20",
+            "category": "Etiquetas",
+            "stock": 100,
+            "image": "/img/tienda8.jpeg"
+        }
     ];
 
     const [itemList, setItemList] = useState([]);
@@ -58,8 +94,10 @@ export default function ItemListContainer (props){
 
     return(
         <>
+        <div>
             <h1 className='titulo-h1'>{props.greeting}</h1>
             <ItemList itemList={itemList}/>
+        </div>
         </>
     );
 }

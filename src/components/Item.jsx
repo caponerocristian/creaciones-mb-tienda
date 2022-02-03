@@ -1,39 +1,28 @@
 import React from 'react';
-import { Card, Button, Container } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Item(props) {
     
     return(
         <>
-            <div className='grupo item-carrito'>
+            {/* <div className='item-carrito'>
             <div className='container container--flex'>
-            <div class="column column--50">
+            <div className='column column--50'>
                 <h3 className="item-carrito__titulo">{props.item.title}</h3>
                     <img src={props.item.image} className="item-carrito__img"/>
                     <p class="item-carrito__txt">${props.item.price}</p>
-                    <NavLink to={`/item/${props.item.id}`}><Button variant="danger" className='onda'>Ver Detalles!</Button></NavLink>
+                    <Link className='btn-tienda' to={`/item/${props.item.id}`}>Ver Detalles!</Link>
                 </div>
             </div>
+            </div> */}
+            <div className='item'>
+                <img src={props.item.image} alt='product image' className='item-carrito__img'/>
+                <div>
+                    <h3 className='item-carrito__titulo'>{props.item.title}</h3>
+                    <p className='item-carrito__txt'>${props.item.price}</p>
+                    <Link className='btn-tienda' to={`/item/${props.item.id}`}>Ver Detalles!</Link>
+                </div>
             </div>
-            {/* <Card className='card'>
-                <Card.Img variant="top" src={props.item.image}/>
-                <Card.Body>
-                    <Card.Title className='padding'>{props.item.title}</Card.Title>
-                    <Card.Text className='padding'>${props.item.price}</Card.Text>
-                    <NavLink to={`/item/${props.item.id}`}><Button variant="danger">Ver Detalles!</Button></NavLink>
-                </Card.Body>
-            </Card> */}
-            {/* <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={props.item.image} />
-                <Card.Body>
-                    <Card.Title>{props.item.title}</Card.Title>
-                    <Card.Text>${props.item.price}</Card.Text>
-                    <NavLink to={`/item/${props.item.id}`}>
-                        <Button variant="danger">Ver Detalles!</Button>
-                    </NavLink>
-                </Card.Body>
-            </Card> */}
         </>
     )
 }

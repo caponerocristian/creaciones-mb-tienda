@@ -1,5 +1,4 @@
 import React, { useState} from "react";
-import {Button} from "react-bootstrap";
 
 function ItemCount({initial, stock, onAdd}) {
     const [count, setCount] = useState(initial);
@@ -17,14 +16,15 @@ function ItemCount({initial, stock, onAdd}) {
         }
     }
     return (
-        <div className="justify-content-center">
-            <Button variant="primary" onClick={restar}>-</Button>
-            <span> {count} </span>
-            <Button variant="primary" onClick={agregar}>+</Button>
+        <>
+        <div className="container--flex">
+            <button className="btn-count" onClick={restar}>-</button>
+            <span className="span-count"> {count} </span>
+            <button className="btn-count" onClick={agregar}>+</button>
             <br />
-            <br />
-            <Button variant="success" onClick={()=>onAdd(count)}>Agregar al carrito</Button>
         </div>
+        <button className="btn-agregar" onClick={()=>onAdd(count)}>Agregar al carrito</button>
+        </>
     )
 }
 

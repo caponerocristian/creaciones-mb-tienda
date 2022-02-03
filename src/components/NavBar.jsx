@@ -16,7 +16,7 @@ export default function NavBar (){
                         <Link to={"/categoria/Caja"} className="link-menu">Cajas</Link>
                     </Nav>
                     <Nav>
-                        <CartWidget/>
+                        <Link to={"/cart"}><CartWidget/></Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

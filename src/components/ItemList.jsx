@@ -7,8 +7,9 @@ function ItemList(props) {
     
     return(
         <>
+        <div>
         {props.itemList.length > 0 ? (
-        <div className="d-flex">
+        <div className="container--flex">
             {props.itemList.map((item) => {
                 return <Item key={item.id} item={item} />;
             })}
@@ -18,6 +19,7 @@ function ItemList(props) {
                 <Spinner animation="border" variant="danger" /> Cargando...
             </div>
         )}
+        </div>
         </>
     );
 }

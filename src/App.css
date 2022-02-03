@@ -1,18 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chilanka&display=swap");
+h3, p, span {
+  font-family: "Chewy", cursive;
+}
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -60,7 +60,7 @@ img {
   display: block;
   width: 100%;
   max-width: 100%;
-}
+} 
 .logo {
   width: 5vw;
   height: 10vh;
@@ -119,25 +119,23 @@ img {
 }
 .item-carrito__titulo {
   font-family: 'Pacifico', cursive;
-  color: #b4d3de;
+  color: white;
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1em;
   margin-bottom: 10px;
 }
 
 .item-carrito__img {
-  width: 100vh;
-  height: 100vh;
-  object-fit: cover;
-  border-radius: 50%;
-  margin: auto;
-  margin-bottom: 20px;
+  object-fit: contain;
+  height: 400px;
+  width: 400px;
 }
 
 .item-carrito__txt {
-  padding: 10px;
+  text-align: center;
+  font-size: 1.3em;
+  color: black;
   font-weight: bold;
-  font-size: 1em;
 }
 
 .itemDetail-titulo {
@@ -148,38 +146,148 @@ img {
   color: #b4d3de;
   margin: 5px;
 }
+.item {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 18rem;
+  margin: 1rem;
+  background-color: #b4d3de;
+  padding: 1rem 0;
+}
+.itemDetail {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 2rem;
+}
 
+.itemDetail > div {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 0 2rem;
+}
+.itemDetail > div > img {
+  object-fit: contain;
+  max-height: 500px;
+}
+.badge {
+  font-family: "Chewy", cursive;
+  background-color: #f9bebe;
+  margin: 0px 0.25rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+}
+
+.image-carrito{
+  width: 100px !important;
+  height: 100px !important;
+  display: block;
+}
+
+.btn-tienda {
+  font-family: "Chewy", cursive;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 150px;
+  background: #f9bebe;
+  color: white;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 30px;
+}
+.btn-tienda:hover {
+  color: #b4d3de;
+}
+
+.btn-agregar {
+  font-family: "Chewy", cursive;
+  font-size: 17px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 150px;
+  background: #f9bebe;
+  color: white;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 30px;
+}
+.btn-agregar:hover{
+  color: #b4d3de;
+}
+.btn-cart {
+  font-family: "Chewy", cursive;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 150px;
+  background: #b4d3de;
+  color: white;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 30px;
+}
+.btn-cart:hover{
+  color: #f9bebe;
+}
+.btn-count {
+  font-family: "Chewy", cursive;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 40px;
+  background: #b4d3de;
+  color: white;
+  padding: 1px;
+  margin: 10px auto;
+  border-radius: 50%;
+}
+.btn-count:hover{
+  color: #f9bebe;
+}
+.span-count{
+  margin: 5px;
+}
+
+@media screen and (min-width: 296px){
+  /* .item-carrito__img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  } */
+  .column--50 {
+    width: 49%;
+  }
+}
 
 @media screen and (min-width:480px) {
   .logo {
     width: 80%;
   }
-  .item-carrito__img {
-      width: 100px;
-      height: 100px;
+  .column--50 {
+    width: 49%;
   }
 }
 @media screen and (min-width:768px) {
   .logo {
     width: 80%;
   }
-  .item-carrito__img {
-      width: 220px;
-      height: 220px;
-  }
 }
 @media screen and (min-width:1024px) {
-  .item-carrito__img {
-      width: 310px;
-      height: 310px;
+  .container {
+    width: 1000px;
   }
   .item-carrito__titulo{
       font-size: 2.1em;
   }
 }
 @media screen and (min-width:1600px) {
-  .item-carrito__img {
-      width: 420px;
-      height: 420px;
-  }
+
 }
