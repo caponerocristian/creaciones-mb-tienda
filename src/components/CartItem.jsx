@@ -13,7 +13,7 @@ function CartItem({prod}) {
 
         <Table striped bordered hover>
         <thead>
-            <tr>
+            <tr className='tr'>
             <th>#</th>
             <th></th>
             <th>Nombre</th>
@@ -28,7 +28,7 @@ function CartItem({prod}) {
             <td><img src={prod.item.image} className='image-carrito'/></td>
             <td>{prod.item.title}</td>
             <td>{prod.count}</td>
-            <td>{prod.item.price}</td>
+            <td>${prod.item.price * prod.count}</td>
             <td><button className='btn-count' onClick={() => deleteItem(prod.item.id)}>X</button></td>
             </tr>
         </tbody>

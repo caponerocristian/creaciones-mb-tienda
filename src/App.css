@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Chewy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chilanka&display=swap");
-h3, p, span {
+h3,h2, p, span {
   font-family: "Chewy", cursive;
 }
 .App {
@@ -39,23 +39,7 @@ h3, p, span {
     transform: rotate(360deg);
   }
 }
-/*.padding{
-  padding: 10px;
-}
-.card {
 
-  height: auto !important;
-  width: '10rem' !important;
-  color : black;
-  overflow: hidden;
-  box-shadow: 0 2px 20px gray;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  cursor: pointer;
-  transition: transform 200ms ease-in;
-}*/
 img {
   display: block;
   width: 100%;
@@ -178,7 +162,7 @@ img {
   background-color: #f9bebe;
   margin: 0px 0.25rem;
   padding: 0.25rem;
-  border-radius: 50%;
+  border-radius: 50% !important;
   color: white;
   font-weight: bold;
 }
@@ -298,13 +282,16 @@ img {
 .column__txt {
   margin: 10px;
 }
+.tr {
+  font-family: "Chewy", cursive;
+}
+.totalPrecio {
+  font-family: "Chewy", cursive;
+  text-align: right;
+}
 
 @media screen and (min-width: 296px){
-  /* .item-carrito__img {
-    width: auto;
-    height: auto;
-    object-fit: cover;
-  } */
+
   .main-footer .container--flex {
     align-items: flex-start;
   }

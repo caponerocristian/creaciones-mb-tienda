@@ -5,7 +5,7 @@ import CartItem from './CartItem';
 
 function Cart() {
 
-    const {cart, clearCart} = useContext(cartContext);
+    const {cart, clearCart, totalPrecio} = useContext(cartContext);
     return (
         <>
         <h1 className='itemDetail-titulo '>Carrito</h1>
@@ -18,6 +18,7 @@ function Cart() {
             <div>
                 {cart.map(element => <CartItem key={element.item.id} prod={element} />)}
                 <br/>
+                <h2 className='totalPrecio'>Total: ${totalPrecio}</h2>
                 <button className='btn-agregar' onClick={() => clearCart()}>Vaciar Carrito</button>
             </div>
         }

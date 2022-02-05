@@ -99,7 +99,7 @@ function Categoria() {
             })}
         </div>
         ) : (
-            <div><Spinner animation="border" variant="danger" />Cargando...</div>
+            <div className='tr'><Spinner animation="border" variant="danger" /> Cargando...</div>
         )}
         </>
     );

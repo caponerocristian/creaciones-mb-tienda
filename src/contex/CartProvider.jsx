@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 
 export const cartContext = createContext();
 
@@ -15,7 +15,6 @@ function CartProvider({children}) {
             setCart([...cart, {item: producto, count}]);
         }
     }
-
     const deleteItem = (id) => {
         const updateCart = cart.filter(element => element.item.id !== id);
         setCart(updateCart);
@@ -28,13 +27,26 @@ function CartProvider({children}) {
     const clearCart = () => {
         setCart([])
     }
+    
+    const [totalCant, setTotalCant] = useState(0);
+    const [totalPrecio, setTotalPrecio] = useState(0);
 
-    const countProduct = () =>{
-        return cart.reduce((accum, item)=> accum = accum + item.count, 0);
-    }
+    useEffect (()=>{
+        let cant = 0;
+        let precio = 0;
+        cart.forEach(producto => (
+            cant = cant + producto.count
+        ));
+        setTotalCant(cant);
+
+        cart.forEach(producto => (
+            precio = precio + (producto.item.price * producto.count)
+        ));
+        setTotalPrecio(precio);
+    });
 
     return (
-        <cartContext.Provider value={{cart, addToCart, deleteItem, clearCart, countProduct}}>
+        <cartContext.Provider value={{cart, addToCart, deleteItem, clearCart, totalCant, totalPrecio}}>
             {children}
         </cartContext.Provider>
     );

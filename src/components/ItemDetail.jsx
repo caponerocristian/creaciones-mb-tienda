@@ -44,7 +44,7 @@ export default function ItemDetail ({producto}){
         <div className='itemDetail'>
             <div><img src={producto.image}/></div>
             <div>
-                <h3>{producto.title}</h3>
+                <h2>{producto.title}</h2>
                 <p>{producto.description}</p>
                 <p>{producto.category}</p>
                 <p>Stock: {producto.stock}</p>
