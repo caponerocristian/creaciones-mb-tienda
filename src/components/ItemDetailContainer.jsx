@@ -1,15 +1,16 @@
 import React, {useEffect,useState} from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
+import { getFirestore } from '../firebase/Firebase';
 
 export default function ItemDetailContainer () {
     const { itemId} = useParams();
 
-    let ListaProductos = [
+    /* let ListaProductos = [
         {
             "price": 100,
             "id": 1,
-            "title": "Cariñosos",
+            "title": "Simones",
             "description": "Caja Pochoclera",
             "category": "Caja",
             "stock": 100,
@@ -85,13 +86,33 @@ export default function ItemDetailContainer () {
             let myProducto = ListaProductos[0];
             setProducto(myProducto);
         },2000)
-    }
+    } */
     const [producto, setProducto] = useState({});
+    
+    useEffect(() => {
+        const db = getFirestore();
+        const itemCollection = db.collection("items");
+        const miItem = itemCollection.doc(itemId);
+        miItem.get()
+            .then((doc) => {
+                if(!doc.exists) {
+                    console.log('no existe ese documento');
+                    return
+                }
+                console.log('item found');
+                setProducto({...doc.data()});
+                console.log(Object.values(producto));
+                /* console.log(doc.data()); */
+            })
+            .catch((err) =>{
+                console.log(err);
+            })
+    }, [itemId])
 
-    useEffect(()=>{
+    /* useEffect(()=>{
         cargarProductos();
-    },[itemId]) 
-
+    },[itemId])  */
+    console.log("este es mi producto" + producto);
     return(
         <>
             <ItemDetail producto={producto}/>

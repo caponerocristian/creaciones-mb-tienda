@@ -12,7 +12,7 @@ function CartProvider({children}) {
             cart[indexItem].count = cart[indexItem].count + count;
             setCart([...cart]);
         } else {
-            setCart([...cart, {item: producto, count}]);
+            setCart([...cart, {...producto, cantidad: count}]);
         }
     }
     const deleteItem = (id) => {

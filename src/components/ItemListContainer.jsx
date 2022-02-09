@@ -1,13 +1,14 @@
 import React, {useEffect,useState} from 'react';
 import ItemList from './ItemList';
+import { getFirestore } from '../firebase/Firebase';
 
 export default function ItemListContainer (props){
 
-    let ListaProductos = [
+    /* let ListaProductos = [
         {
             "price": 100,
             "id": 1,
-            "title": "Cariñosos",
+            "title": "Simones",
             "description": "Caja Pochoclera",
             "category": "Caja",
             "stock": 100,
@@ -76,11 +77,34 @@ export default function ItemListContainer (props){
             "stock": 100,
             "image": "/img/tienda8.jpeg"
         }
-    ];
+    ]; */
 
     const [itemList, setItemList] = useState([]);
+    useEffect(() =>{
+        const db = getFirestore();
+        const itemCollection = db.collection("items")
+        //.where('stock', '>', 10);
 
-    const cargarProductos = new Promise((resolve, reject)  => {
+        itemCollection.get()
+        .then((querySnapShot) => {
+            if(querySnapShot.size == 0) {
+                console.log('no hay documentos con ese query');
+                return
+            }
+            console.log('hay documentos');
+
+            setItemList(querySnapShot.docs.map((doc)=> {
+                return { id: doc.id, ...doc.data() }
+            }
+            ));
+
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }, [])
+
+    /* const cargarProductos = new Promise((resolve, reject)  => {
         setTimeout(()=>{
             resolve(ListaProductos);
         }, 2000);
@@ -91,7 +115,7 @@ export default function ItemListContainer (props){
             setItemList(res);
         });
     }, []);
-
+ */
     return(
         <>
         <div>

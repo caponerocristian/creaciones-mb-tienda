@@ -2,15 +2,16 @@ import React, {useEffect,useState} from 'react';
 import { useParams} from 'react-router-dom';
 import Item from './Item';
 import {Spinner} from "react-bootstrap";
+import { getFirestore } from '../firebase/Firebase';
 
 function Categoria() {
     const {categoriaId} = useParams();
 
-    let ListaProductos = [
+    /* let ListaProductos = [
         {
             "price": 100,
             "id": 1,
-            "title": "Cariñosos",
+            "title": "Simones",
             "description": "Caja Pochoclera",
             "category": "Caja",
             "stock": 100,
@@ -79,15 +80,37 @@ function Categoria() {
             "stock": 100,
             "image": "/img/tienda8.jpeg"
         }
-    ];
+    ]; */
     const [producto, setProducto] = useState({});
+    useEffect(() =>{
+        const db = getFirestore();
+        const itemCollection = db.collection("items").where('category', '==', categoriaId);
 
-    useEffect(()=>{
+        itemCollection.get()
+        .then((querySnapShot) => {
+            if(querySnapShot.size == 0) {
+                console.log('no hay documentos con ese query');
+                return
+            }
+            console.log('hay documentos');
+
+            setProducto(querySnapShot.docs.map((doc)=> {
+                return { id: doc.id, ...doc.data() }
+            }
+            ));
+
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+    }, [categoriaId])
+
+    /*  useEffect(()=>{
         setTimeout(()=>{
             setProducto(ListaProductos.filter(item => item.category == categoriaId));
         },2000);
         
-    },[categoriaId]) 
+    },[categoriaId])  */
 
     return (
         <>
