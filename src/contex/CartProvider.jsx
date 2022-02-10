@@ -12,9 +12,11 @@ function CartProvider({children}) {
             cart[indexItem].count = cart[indexItem].count + count;
             setCart([...cart]);
         } else {
-            setCart([...cart, {...producto, cantidad: count}]);
+            setCart([...cart, {item: producto, count}]);
         }
     }
+    
+
     const deleteItem = (id) => {
         const updateCart = cart.filter(element => element.item.id !== id);
         setCart(updateCart);
@@ -22,12 +24,11 @@ function CartProvider({children}) {
 
     const isInCart = (id) => {
         return cart.some(element => element.item.id === id);
-    }
+    } 
 
     const clearCart = () => {
         setCart([])
     }
-    
     const [totalCant, setTotalCant] = useState(0);
     const [totalPrecio, setTotalPrecio] = useState(0);
 

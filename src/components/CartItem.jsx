@@ -3,19 +3,16 @@ import { cartContext } from '../contex/CartProvider';
 import Table from 'react-bootstrap/Table'
 
 function CartItem({prod}) {
-    const {deleteItem} = useContext(cartContext)
-    var tabla = document.getElementById('tabla');
+    const {deleteItem} = useContext(cartContext);
 
     return(
         <>
             {/* <h3>{prod.item.title}</h3>
             <p>Cantidad: {prod.count}</p>
             <button className='btn-agregar' onClick={() => deleteItem(prod.item.id)}>Borrar</button> */}
-        {tabla.innerHTML= ''}
         <Table striped bordered hover>
         <thead>
             <tr className='tr'>
-            <th>#</th>
             <th></th>
             <th>Nombre</th>
             <th>Cantidad</th>
@@ -23,9 +20,8 @@ function CartItem({prod}) {
             <th></th>
             </tr>
         </thead>
-        <tbody id='tabla'>
+        <tbody>
             <tr>
-            <td>{prod.item.id}</td>
             <td><img src={prod.item.image} className='image-carrito'/></td>
             <td>{prod.item.title}</td>
             <td>{prod.count}</td>
