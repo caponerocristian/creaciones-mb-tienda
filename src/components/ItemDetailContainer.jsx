@@ -20,15 +20,13 @@ export default function ItemDetailContainer () {
                 }
                 console.log('item found');
                 setProducto({ id: doc.id, ...doc.data() });
-                console.log(Object.values(producto));
-                /* console.log(doc.data()); */
+                console.log(doc.data());
             })
             .catch((err) =>{
                 console.log(err);
             });
     }, []);
 
-    console.log("este es mi producto" + producto);
     return(
         <>
             <ItemDetail producto={producto}/>
