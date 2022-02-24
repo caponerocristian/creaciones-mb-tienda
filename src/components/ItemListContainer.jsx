@@ -15,7 +15,6 @@ export default function ItemListContainer (props){
                 console.log('no hay documentos con ese query');
                 return
             }
-            console.log('hay documentos');
 
             setItemList(querySnapShot.docs.map((doc)=> {
                 return { id: doc.id, ...doc.data() }

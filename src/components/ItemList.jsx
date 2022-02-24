@@ -9,7 +9,7 @@ function ItemList(props) {
         <>
         <div>
         {props.itemList.length > 0 ? (
-        <div className="container--flex">
+        <div className="productList ">
             {props.itemList.map((item) => {
                 return <Item key={item.id} item={item} />;
             })}

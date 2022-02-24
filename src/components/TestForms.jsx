@@ -13,7 +13,8 @@ function TestForms() {
     const emailRef = useRef();
     const cityRef = useRef();
 
-    function handleClick(){
+    function handleSubmit(event){
+        event.preventDefault();
         const db = getFirestore();
         const orders = db.collection("orders");
 
@@ -48,7 +49,7 @@ function TestForms() {
                 {finalizarCompra ?
                 <>
                 <h2 className='itemDetail-titulo '>Contacto</h2>
-                <form onSubmit={(event) => event.preventDefault()} className='container form-seccion form-centrado'>
+                <form onSubmit={handleSubmit} className='container form-seccion form-centrado'>
                     <fieldset>
                         <legend>Informacion Personal</legend>
                         <label>Nombre y Apellido:</label>
@@ -66,13 +67,13 @@ function TestForms() {
                         <label>Teléfono:</label>
                         <input type="tel" name='phone' ref={phoneRef} placeholder="Ingrese su teléfono" required/>
                         <br/>
-                        <button type='submit' onClick={()=> handleClick()} className="btn-cart ">Enviar</button>
+                        <button type='submit' className="btn-cart ">Finalizar Compra</button>
                     </fieldset>
                 </form>
                 </>
                 :
                 <div>
-                    <h3>Gracias por su compra, su numero de orden es: {orderId}</h3>
+                    <h3 className='cartelFinal'>Gracias por su compra, su numero de orden es: {orderId}</h3>
                 </div>
                 
                 }

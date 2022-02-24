@@ -18,7 +18,6 @@ export default function ItemDetailContainer () {
                     console.log('no existe ese documento');
                     return
                 }
-                console.log('item found');
                 setProducto({ id: doc.id, ...doc.data() });
                 console.log(doc.data());
             })
