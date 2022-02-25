@@ -35,7 +35,7 @@ function Categoria() {
         <>
         <h2 className='itemDetail-titulo '>Categorias</h2>
         {producto.length > 0 ? (
-        <div className="container--flex">
+        <div className="productList">
             {producto.map((item) => {
                 return <Item key={item.id} item={item} />;
             })}

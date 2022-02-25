@@ -376,11 +376,12 @@ input:valid ~ .check-ok {
   .column--33 {
     width: 32%;
   }
+  
 }
 
 @media screen and (min-width:480px) {
   .logo {
-    width: 80%;
+    width: 90%;
   }
   .item {
     align-items: center;
@@ -394,10 +395,15 @@ input:valid ~ .check-ok {
   .column--33 {
     width: 32%;
   }
+  .itemDetail img {
+    object-fit: contain;
+    width: 500px ;
+  }
+
 }
 @media screen and (min-width:768px) {
   .logo {
-    width: 80%;
+    width: 80px;
   }
 }
 @media screen and (min-width:1024px) {
