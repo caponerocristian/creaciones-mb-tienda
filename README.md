@@ -2,16 +2,16 @@
 
 La App final se trata de un Ecommerce
 
-**Selección de un producto*
+Selección de un producto
 ![Demonstration](https://media.giphy.com/media/zLdeANp6f6ULJ5KRkw/giphy.gif)
 
-**Selección por categoria*
+Selección por categoria
 ![Demonstration](https://media.giphy.com/media/tnyIN8nUr7jdfSW0YJ/giphy.gif)
 
-**Detalle de compra y formulario de contacto*
+Detalle de compra y formulario de contacto
 ![Demonstration](https://media.giphy.com/media/kRUn5yJDReVE7SDMRP/giphy.gif)
 
-**Compra efectuada!*
+Compra efectuada
 ![Demonstration](https://media.giphy.com/media/D29dddWkGwdZLwOjVT/giphy.gif)
 
 ### Nombre del Proyecto
